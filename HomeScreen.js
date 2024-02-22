@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 
 const HomeScreen = () => {
-    const [textoUsuario, setTextoUsuario] = useState('Escribe aquí: ');
+    const [textoUsuario, setTextoUsuario] = useState('Escribe algo aquí: ');
 
     const navigation = useNavigation();
 
