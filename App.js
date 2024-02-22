@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react"; // Importa useState
-import { Alert, Button, StyleSheet, Text, View, TextInput } from "react-native";
+import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function App() {
   // Define textoUsuario como un estado con useState
