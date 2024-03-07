@@ -1,16 +1,19 @@
+import { useNavigation } from '@react-navigation/native'; // Import the 'useNavigation' hook
 import React, { useState } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import InputWithIcon from './InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
 import RoundedButton from './RoundedButton';
 
+
 const LoginForm = () => {
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigation = useNavigation(); // Use the 'useNavigation' hook to get the navigation object
+
   const handleRegistration = () => {
     // Aquí deberías incluir la validación de los datos ingresados y luego enviarlos a tu backend o manejarlos según sea necesario
-    Alert.alert("Registro", `Nombre: ${name}\nEmail: ${email}`);
+    Alert.alert("Inicio de sesión", `Nombre: ${name}\nEmail: ${email}`);
   };
 
   return (
@@ -35,7 +38,12 @@ const LoginForm = () => {
           secureTextEntry={true} // Esto es para ocultar la contraseña mientras se escribe
         />
       </View>
-        <RoundedButton title="Log In" onPress={handleRegistration} />
+      <TouchableOpacity
+        onPress={() => navigation.navigate('PasswordRecovery')}
+      >
+        <Text style={styles.linkText}>Olvidé mi contraseña</Text>
+      </TouchableOpacity>
+      <RoundedButton title="Log In" onPress={handleRegistration} />
     </View>
   );
 };
@@ -46,6 +54,11 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginBottom: 15, // Añade un margen en la parte inferior de cada input
+  },
+  linkText: {
+    color: '#FA5246',
+    textDecorationLine: 'underline',
+    textAlign: 'center',
   },
 });
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import InputWithIcon from './InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
 import RoundedButton from './RoundedButton';
 
@@ -12,6 +12,8 @@ const RegistrationForm = () => {
     // Aquí deberías incluir la validación de los datos ingresados y luego enviarlos a tu backend o manejarlos según sea necesario
     Alert.alert("Registro", `Nombre: ${name}\nEmail: ${email}`);
   };
+
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   return (
     <View style={styles.container}>
@@ -45,7 +47,17 @@ const RegistrationForm = () => {
           secureTextEntry={true} // Esto es para ocultar la contraseña mientras se escribe
         />
       </View>
-        <RoundedButton title="Registrarse" onPress={handleRegistration} />
+      <View style={styles.inputContainer}>
+        <InputWithIcon
+          iconName="lock"
+          iconSize={20}
+          placeholder="Repetir contraseña"
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+          secureTextEntry={true} // Esto es para ocultar la contraseña mientras se escribe
+        />
+      </View>
+      <RoundedButton title="Registrarse" onPress={handleRegistration} />
     </View>
   );
 };
