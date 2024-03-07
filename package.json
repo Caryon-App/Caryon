@@ -16,7 +16,8 @@
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-native": "^0.73.4",
-    "react-native-gesture-handler": "~2.14.0"
+    "react-native-gesture-handler": "~2.14.0",
+    "react-native-vector-icons": "^10.0.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.2",

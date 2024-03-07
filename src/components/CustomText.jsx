@@ -14,19 +14,19 @@ const styles = StyleSheet.create({
   h1: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#00473e',
     textAlign: 'center',
 
   },
   h2: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#00473e',
     textAlign: 'center',
   },
   p: {
     fontSize: 16,
-    color: '#666',
+    color: '#475d5b',
     textAlign: 'center',
   },
 });
