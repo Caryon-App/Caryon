@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import CustomText from "../components/CustomText";
 import RoundedButton from "../components/RoundedButton";
 import InputWithIcon from "../components/InputWithIcon";
 
 const HomeScreen = () => {
-  const [inputValue, setInputValue] = useState("Escribe algo aqui");
+  const [inputValue, setInputValue] = useState("");
   const navigation = useNavigation();
 
   return (
@@ -14,10 +14,10 @@ const HomeScreen = () => {
       <Text>Open up App.js to start working on your app!</Text>
       <Text>Try editing me! </Text>
       <InputWithIcon
-        iconName="search"
+        iconName="envelope"
         iconColor="#000"
         iconSize={20}
-        placeholder="Buscar..."
+        placeholder="Mail..."
         value={inputValue}
         onChangeText={setInputValue}
       />
@@ -26,15 +26,14 @@ const HomeScreen = () => {
         <CustomText type="h2">Este es un H2</CustomText>
         <CustomText type="p">Esto es un párrafo.</CustomText>
         <RoundedButton
-          title="Presiona Me"
+          title="Presiona para ir a Details"
           onPress={() => navigation.navigate("Details", { inputValue })}
         />
-        <Button
-          title="Presiona aquí"
-          onPress={() => navigation.navigate("Details", { inputValue })}
+        <RoundedButton
+          title="Presiona para ir a Registration"
+          onPress={() => navigation.navigate("Registration", { inputValue })}
         />
       </View>
-      <TextInput value={inputValue} onChangeText={inputValue} />
     </View>
   );
 };
