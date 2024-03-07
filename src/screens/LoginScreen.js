@@ -3,13 +3,13 @@ import { StyleSheet, View } from "react-native";
 
 // En tu App.js o donde configures la navegación
 import CustomText from "../components/CustomText";
-import RegistrationForm from "../components/RegisterForm";
+import LoginForm from "../components/LoginForm";
 
-const RegisterScreen = () => {
+const LoginScreen = () => {
   return (
     <View style={styles.container}>
-      <CustomText type="h1">Registro</CustomText>
-      <RegistrationForm />
+      <CustomText type="h1">Log In</CustomText>
+      <LoginForm />
     </View>
   );
 };
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegisterScreen;
+export default LoginScreen;

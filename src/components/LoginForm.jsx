@@ -3,7 +3,7 @@ import { View, StyleSheet, Alert } from 'react-native';
 import InputWithIcon from './InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
 import RoundedButton from './RoundedButton';
 
-const RegistrationForm = () => {
+const LoginForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,16 +15,6 @@ const RegistrationForm = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <InputWithIcon
-          iconName="user"
-          iconSize={20}
-          placeholder="Nombre completo"
-          value={name}
-          onChangeText={setName}
-          autoCapitalize="words"
-        />
-      </View>
       <View style={styles.inputContainer}>
         <InputWithIcon
           iconName="envelope"
@@ -45,7 +35,7 @@ const RegistrationForm = () => {
           secureTextEntry={true} // Esto es para ocultar la contraseña mientras se escribe
         />
       </View>
-        <RoundedButton title="Registrarse" onPress={handleRegistration} />
+        <RoundedButton title="Log In" onPress={handleRegistration} />
     </View>
   );
 };
@@ -59,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegistrationForm;
+export default LoginForm;

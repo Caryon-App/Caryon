@@ -30,6 +30,10 @@ const HomeScreen = () => {
           onPress={() => navigation.navigate("Details", { inputValue })}
         />
         <RoundedButton
+          title="Presiona para ir a Login"
+          onPress={() => navigation.navigate("Login", { inputValue })}
+        />
+        <RoundedButton
           title="Presiona para ir a Registration"
           onPress={() => navigation.navigate("Registration", { inputValue })}
         />

@@ -1,33 +1,41 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, StyleSheet } from 'react-native';
 
-// Definición del componente CustomText para aceptar children
-const CustomText = ({ type, children }) => {
-  // Selecciona el estilo basado en el tipo de texto
-  const textStyle = styles[type] || styles.p;
+const CustomText = ({ type, children, style }) => {
+  // Aplica los estilos base y cualquier estilo adicional proporcionado
+  const textStyle = StyleSheet.compose(styles[type] || styles.default, style);
 
   return <Text style={textStyle}>{children}</Text>;
 };
 
-// Estilos para diferentes tipos de texto
+// Valida las props del componente CustomText
+CustomText.propTypes = {
+  type: PropTypes.oneOf(['h1', 'h2', 'p']),
+  children: PropTypes.node.isRequired,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+};
+
+// Define estilos predeterminados para el componente
 const styles = StyleSheet.create({
   h1: {
-    fontSize: 24,
+    fontSize: 36,
     fontWeight: 'bold',
     color: '#00473e',
     textAlign: 'center',
-
   },
   h2: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#00473e',
-    textAlign: 'center',
   },
   p: {
     fontSize: 16,
     color: '#475d5b',
-    textAlign: 'center',
+  },
+  default: {
+    fontSize: 16,
+    color: '#000', // Estilo por defecto en caso de que no se proporcione un tipo
   },
 });
 
