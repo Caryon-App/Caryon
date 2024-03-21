@@ -7,6 +7,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import PasswordRecovery from "./src/screens/PasswordRecovery";
 import RegisterScreen from "./src/screens/RegisterScreen";
+import ShoppingListScreen from "./src/screens/ShoppingListScreen";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen name="Registration" component={RegisterScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="PasswordRecovery" component={PasswordRecovery} />
+        <Stack.Screen name="ShoppingList" component={ShoppingListScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

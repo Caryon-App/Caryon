@@ -37,6 +37,16 @@ const HomeScreen = () => {
           title="Presiona para ir a Registration"
           onPress={() => navigation.navigate("Registration", { inputValue })}
         />
+        <RoundedButton
+          title="Presiona para Recuperar contraseña"
+          onPress={() =>
+            navigation.navigate("PasswordRecovery", { inputValue })
+          }
+        />
+        <RoundedButton
+          title="Presiona para ir a la lista de la compra"
+          onPress={() => navigation.navigate("ShoppingList", { inputValue })}
+        />
       </View>
     </View>
   );

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
+import PropTypes from 'prop-types';
+
 const RoundedButton = ({ onPress, title }) => {
+  // Component code here
+
   const [isPressed, setIsPressed] = useState(false);
 
   const buttonStyles = [
@@ -19,6 +23,11 @@ const RoundedButton = ({ onPress, title }) => {
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
+};
+
+RoundedButton.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({

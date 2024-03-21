@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     color: '#FA5246',
     textDecorationLine: 'underline',
     textAlign: 'center',
+    marginVertical: 5,
   },
 });
 

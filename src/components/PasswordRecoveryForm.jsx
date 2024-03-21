@@ -24,7 +24,9 @@ const PasswordRecoveryForm = () => {
                         keyboardType="email-address" />
                 </View>
             </View>
-            <RoundedButton title="Enviar mensaje" onPress={handleSendRecoveryEmail} />
+            <View style={styles.buttonContainer}>
+                <RoundedButton title="Enviar mensaje" onPress={handleSendRecoveryEmail} />
+            </View>
         </View>
     );
 };
@@ -35,6 +37,9 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         marginBottom: 15,
+    },
+    buttonContainer: {
+        marginHorizontal: 25,
     },
 });
 
