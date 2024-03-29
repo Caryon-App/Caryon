@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 // En tu App.js o donde configures la navegación
-import CustomText from "../components/CustomText";
-import LoginForm from "../components/LoginForm";
+import CustomText from "../components/general/CustomText";
+import LoginForm from "../components/forms/LoginForm";
 
 const LoginScreen = () => {
   return (

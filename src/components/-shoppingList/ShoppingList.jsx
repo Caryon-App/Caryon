@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { View, StyleSheet, FlatList, TextInput } from 'react-native';
 import ListItem from './ListItem';
-import RoundedButton from '../RoundedButton';
+import RoundedButton from '../general/RoundedButton';
 
 const ShoppingList = () => {
   const [item, setItem] = useState('');

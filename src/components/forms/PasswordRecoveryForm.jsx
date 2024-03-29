@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
-import InputWithIcon from './InputWithIcon';
-import RoundedButton from './RoundedButton';
+import InputWithIcon from '../general/InputWithIcon';
+import RoundedButton from '../general/RoundedButton';
 
 const PasswordRecoveryForm = () => {
     const [email, setEmail] = useState('');

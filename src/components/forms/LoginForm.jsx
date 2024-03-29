@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native'; // Import the 'useNavigation' hook
 import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import InputWithIcon from './InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
-import RoundedButton from './RoundedButton';
+import InputWithIcon from '../general/InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
+import RoundedButton from '../general/RoundedButton';
 
 
 const LoginForm = () => {

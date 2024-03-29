@@ -1,24 +1,18 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import ShoppingList from "../components/shoppingList/ShoppingList";
+import { View } from "react-native";
+import Header from "../components/shoplist/Header";
+import ShoppingList from "../components/shoplist/ShoppingList";
+import Footer from "../components/shoplist/Footer";
+import styles from "../styles/ShopStyles";
 
-const ShoppingListScreen = () => {
+const ShoppingListApp = () => {
   return (
     <View style={styles.container}>
+      <Header title="Lista de la compra" />
       <ShoppingList />
+      <Footer />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-  },
-  buttonContainer: {
-    margin: 20,
-  },
-});
-
-export default ShoppingListScreen;
+export default ShoppingListApp;
