@@ -7,7 +7,7 @@ const Footer = () => (
     <View style={styles.footer}>
         <TextInput
             style={styles.searchInput}
-            placeholder="Buscar..."
+            placeholder="Buscar ingredientes..."
             // Aquí la lógica para manejar el texto de búsqueda
         />
         <TouchableOpacity style={styles.addButton}>
