@@ -1,39 +1,47 @@
-import React from "react";
-import { View, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import Header from "../../components/shoplist/Header";
 import SearchBar from "../../components/recipes/SearchBar";
 import CategorySelector from "../../components/recipes/CategorySelector";
-import RecipeCard from "../../components/recipes/RecipeCard";
+import RecipeApiCard from "../../components/recipes/RecipeApiCard";
 import styles from "../../styles/RecipePageStyles";
+// Asumiendo que spoonacularClient está correctamente importado
+import { spoonacularClient } from "../../javascript/spoonacularApi";
 
 const InspirationScreen = () => {
-  // Imagina que recipeData es la información de tus recetas obtenida de un API o base de datos
-  const recipeData = [
-    {
-      id: 1,
-      title: "Crepes",
-      imageUrl:
-        "https://s1.abcstatics.com/media/gurmesevilla/2010/06/crepes-con-nata-y-chocolate.jpeg",
-    },
-    {
-      id: 2,
-      title: "Tarta de Manzana",
-      imageUrl: "https://imag.bonviveur.com/tarta-de-manzana.jpg",
-    },
-    // ...más recetas
-  ];
+  const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadRecipes = async () => {
+      try {
+        // Aquí podrías especificar tags como 'chicken' o lo que necesites
+        const data = await spoonacularClient.getRandomRecipes("chicken");
+        setRecipes(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadRecipes();
+  }, []);
+
+  if (loading) {
+    return <ActivityIndicator size="large" />;
+  }
 
   return (
     <View style={styles.screenContainer}>
       <Header title="Recetas" />
-      <SearchBar placeholder="Postres" />
+      <SearchBar placeholder="Busca una receta" />
       <CategorySelector categories={["Postres", "Cenas", "Desayunos"]} />
       <ScrollView style={styles.recipeList}>
-        {recipeData.map((recipe) => (
-          <RecipeCard
+        {recipes.map((recipe) => (
+          <RecipeApiCard
             key={recipe.id}
-            title={recipe.title}
-            imageUrl={recipe.imageUrl}
+            recipe={recipe} // Ahora pasamos todo el objeto de receta
           />
         ))}
       </ScrollView>

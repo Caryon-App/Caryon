@@ -5,8 +5,7 @@ import ShoppingList from "../../components/shoplist/ShoppingList";
 import Footer from "../../components/shoplist/Footer";
 import styles from "../../styles/ShopStyles";
 
-
-const ShoppingListApp = () => {
+const ShoppingListScreen = () => {
   return (
     <View style={styles.container}>
       <Header title="Lista de la compra" />
@@ -16,4 +15,4 @@ const ShoppingListApp = () => {
   );
 };
 
-export default ShoppingListApp;
+export default ShoppingListScreen;

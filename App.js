@@ -1,10 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FontAwesome5 } from "@expo/vector-icons";
+
 import ShoppingListScreen from "./src/screens/main/ShoppingListScreen";
 import InspirationScreen from "./src/screens/main/InspirationScreen";
 import ProfileScreen from "./src/screens/main/ProfileScreen";
-import { FontAwesome5 } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,6 @@ const App = () => {
             );
           },
           tabBarActiveTintColor: "tomato",
-          
           tabBarInactiveTintColor: "gray",
           // Aquí puedes continuar añadiendo las opciones que antes estaban en tabBarOptions
         })}

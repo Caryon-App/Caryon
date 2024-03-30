@@ -35,7 +35,7 @@ export default StyleSheet.create({
   },
   recipeList: {
     padding: 10,
-    marginHorizontal: 10,m
+    marginHorizontal: 10,
   },
   recipeCard: {
     flexDirection: "row",
