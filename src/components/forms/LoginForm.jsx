@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import InputWithIcon from '../general/InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
 import RoundedButton from '../general/RoundedButton';
+import { loginUser } from '../../javascript/supabase/auth'; // Asegúrate de que este es el camino correcto para tu función de inicio de sesión
 
 
 const LoginForm = () => {
@@ -11,10 +12,17 @@ const LoginForm = () => {
 
   const navigation = useNavigation(); // Use the 'useNavigation' hook to get the navigation object
 
-  const handleRegistration = () => {
-    // Aquí deberías incluir la validación de los datos ingresados y luego enviarlos a tu backend o manejarlos según sea necesario
-    Alert.alert("Inicio de sesión", `Nombre: ${name}\nEmail: ${email}`);
+  const handleLogin = async () => {
+    console.log(email, password)
+    try {
+      const { data } = await loginUser(email, password);
+      Alert.alert("Inicio de sesión exitoso", `Usuario: ${data.user.email}`);
+      // Navegar a otra pantalla si es necesario
+    } catch (error) {
+      Alert.alert("Error", error.error_description || error.message);
+    }
   };
+  
 
   return (
     <View style={styles.container}>
@@ -43,7 +51,7 @@ const LoginForm = () => {
       >
         <Text style={styles.linkText}>Olvidé mi contraseña</Text>
       </TouchableOpacity>
-      <RoundedButton title="Log In" onPress={handleRegistration} />
+      <RoundedButton title="Log In" onPress={handleLogin} />
     </View>
   );
 };

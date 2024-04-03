@@ -5,7 +5,8 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 import ShoppingListScreen from "./src/screens/main/ShoppingListScreen";
 import InspirationScreen from "./src/screens/main/InspirationScreen";
-import ProfileScreen from "./src/screens/main/ProfileScreen";
+import RegisterScreen from "./src/screens/main/RegisterScreen";
+import LoginScreen from "./src/screens/main/LoginScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,7 +40,8 @@ const App = () => {
       >
         <Tab.Screen name="ShoppingList" component={ShoppingListScreen} />
         <Tab.Screen name="Inspiration" component={InspirationScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Login" component={LoginScreen} />
+        <Tab.Screen name="Register" component={RegisterScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

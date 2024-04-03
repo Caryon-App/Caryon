@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
-import InputWithIcon from '../general/InputWithIcon'; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
+import InputWithIcon from '../general/InputWithIcon';
 import RoundedButton from '../general/RoundedButton';
+import { registerUser } from '../../javascript/supabase/auth';
 
-const RegistrationForm = () => {
+const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleRegistration = () => {
-    // Aquí deberías incluir la validación de los datos ingresados y luego enviarlos a tu backend o manejarlos según sea necesario
-    Alert.alert("Registro", `Nombre: ${name}\nEmail: ${email}`);
-  };
-
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleRegistration = async () => {
+    if (password !== confirmPassword) {
+      Alert.alert("Error", "Las contraseñas no coinciden");
+      return;
+    }
+    try {
+      console.log(email, password)
+      const { data } = await registerUser(email, password);
+      Alert.alert("Registro exitoso", `Usuario registrado: ${data.user.email}`);
+      // Navegar a otra pantalla si es necesario
+    } catch (error) {
+      Alert.alert("Error", error.error_description || error.message);
+    }
+  };
+  
 
   return (
     <View style={styles.container}>
@@ -71,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegistrationForm;
+export default RegisterForm;
