@@ -1,16 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import Header from "../../components/shoplist/Header";
 import ShoppingList from "../../components/shoplist/ShoppingList";
-import Footer from "../../components/shoplist/Footer";
+import AddIttemsButton from "../../components/shoplist/AddIttemsButton";
 import styles from "../../styles/ShopStyles";
 
 const ShoppingListScreen = () => {
+  const [items, setItems] = useState([
+    {
+      title: "Frutas y verduras",
+      items: [
+        { name: "Manzana", checked: false },
+        { name: "Plátano", checked: false },
+        { name: "Zanahoria", checked: false },
+      ],
+    },
+    {
+      title: "Panadería",
+      items: [
+        { name: "Harina", checked: false },
+        { name: "Leche", checked: false },
+        { name: "Levadura", checked: false },
+      ],
+    },
+  ]);
+
+  const addItem = (category, newItemName) => {
+    const existingSectionIndex = items.findIndex(
+      (section) => section.title === category
+    );
+
+    if (existingSectionIndex !== -1) {
+      // La sección ya existe, agregamos el elemento a esa sección
+      const newItems = items.map((section, index) => {
+        if (index === existingSectionIndex) {
+          return {
+            ...section,
+            items: [...section.items, { name: newItemName, checked: false }],
+          };
+        }
+        return section;
+      });
+
+      setItems(newItems);
+    } else {
+      // La sección no existe, agregamos una nueva sección
+      setItems([
+        ...items,
+        {
+          title: category,
+          items: [{ name: newItemName, checked: false }],
+        },
+      ]);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Header title="Lista de la compra" />
-      <ShoppingList />
-      <Footer />
+      <ShoppingList items={items} />
+      <AddIttemsButton addNewItem={addItem} />
     </View>
   );
 };

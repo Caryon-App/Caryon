@@ -38,7 +38,8 @@ export default StyleSheet.create({
   },
   footer: {
     flexDirection: "row",
-    padding: 20,
+    padding: 15,
+    marginBottom: 15,
     alignItems: "center",
     justifyContent: "space-between",
     borderTopWidth: 1,
