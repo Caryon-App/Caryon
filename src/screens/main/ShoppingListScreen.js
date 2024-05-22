@@ -7,7 +7,6 @@ import {
   Button,
   FlatList,
   Modal,
-  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -121,13 +120,15 @@ const IngredientsScreen = () => {
           />
         </View>
       </Modal>
-      <ScrollView style={styles.scrollContainer}>
-        {categories.map((category) => (
-          <View key={category.sect_id} style={styles.categoryContainer}>
-            <Text style={styles.categoryTitle}>{category.title}</Text>
+      <FlatList
+        data={categories}
+        keyExtractor={(item) => item.sect_id.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.sectionContainer}>
+            <Text style={styles.categoryTitle}>{item.title}</Text>
             <FlatList
               data={ingredients.filter(
-                (ingredient) => ingredient.sect_id === category.sect_id
+                (ingredient) => ingredient.sect_id === item.sect_id
               )}
               keyExtractor={(item) => item.al_id.toString()}
               renderItem={({ item }) => (
@@ -145,8 +146,8 @@ const IngredientsScreen = () => {
               )}
             />
           </View>
-        ))}
-      </ScrollView>
+        )}
+      />
       <View style={styles.fixedSection}>
         <TouchableOpacity
           style={styles.pickerButton}

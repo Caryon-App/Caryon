@@ -3,7 +3,7 @@ import { ActivityIndicator, ScrollView, View } from "react-native";
 import CategorySelector from "../../components/recipes/CategorySelector";
 import RecipeApiCard from "../../components/recipes/RecipeApiCard";
 // import SearchBar from "../../components/recipes/SearchBar";
-import TextInput from "../../components/TextInput";
+import TextInput from "../../components/recipes/TextInput";
 import Header from "../../components/shoplist/Header";
 import styles from "../../styles/RecipePageStyles";
 
