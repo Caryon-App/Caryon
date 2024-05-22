@@ -1,3 +1,4 @@
+// src\javascript\supabase\auth.js
 import supabase from "./supabaseClient"; // Asume que este es el camino correcto a tu cliente de Supabase
 
 const registerUser = async (email, password) => {

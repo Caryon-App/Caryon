@@ -1,4 +1,4 @@
-// Importa la función createClient de supabase-js
+// src\javascript\supabase\supabaseClient.js
 import { createClient } from "@supabase/supabase-js";
 const supabaseUrl = "https://ijflbhnnkysiabzsrlvy.supabase.co/";
 const supabaseAnonKey =

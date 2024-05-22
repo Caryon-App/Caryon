@@ -1,8 +1,10 @@
+// App.js
 import { FontAwesome5 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 
+import IngredientsScreen from "./src/screens/main/IngredientsScreen";
 import InspirationScreen from "./src/screens/main/InspirationScreen";
 import LoginScreen from "./src/screens/main/LoginScreen";
 import RegisterScreen from "./src/screens/main/RegisterScreen";
@@ -35,13 +37,13 @@ const App = () => {
           },
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
-          // Aquí puedes continuar añadiendo las opciones que antes estaban en tabBarOptions
         })}
       >
         <Tab.Screen name="ShoppingList" component={ShoppingListScreen} />
         <Tab.Screen name="Inspiration" component={InspirationScreen} />
         <Tab.Screen name="Login" component={LoginScreen} />
         <Tab.Screen name="Register" component={RegisterScreen} />
+        <Tab.Screen name="Ingredients" component={IngredientsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
