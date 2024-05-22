@@ -6,7 +6,6 @@ import styles from "../../styles/RecipePageStyles";
 const SearchBar = ({ placeholder }) => (
   <View style={styles.searchBar}>
     <TextInput placeholder={placeholder} style={styles.searchInput} />
-    {/* Añade el icono de búsqueda aquí si es necesario */}
   </View>
 );
 
