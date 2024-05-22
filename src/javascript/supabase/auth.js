@@ -23,3 +23,4 @@ const loginUser = async (email, password) => {
 };
 
 export { loginUser, registerUser };
+

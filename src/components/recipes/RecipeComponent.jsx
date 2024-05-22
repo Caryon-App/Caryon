@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
-import { spoonacularClient } from '../../javascript/spoonacularApi'; // Asegúrate de tener la ruta correcta al archivo
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
+import { spoonacularClient } from "../../javascript/spoonacularApi"; // Asegúrate de tener la ruta correcta al archivo
 
 const RecipeComponent = () => {
   const [recipe, setRecipe] = useState(null);

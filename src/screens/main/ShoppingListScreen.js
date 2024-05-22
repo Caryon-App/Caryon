@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View } from "react-native";
+import AddIttemsButton from "../../components/shoplist/AddIttemsButton";
 import Header from "../../components/shoplist/Header";
 import ShoppingList from "../../components/shoplist/ShoppingList";
-import AddIttemsButton from "../../components/shoplist/AddIttemsButton";
 import styles from "../../styles/ShopStyles";
 
 const ShoppingListScreen = () => {

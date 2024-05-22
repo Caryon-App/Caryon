@@ -2,8 +2,8 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import CustomText from "../components/general/CustomText";
-import RoundedButton from "../components/general/RoundedButton";
 import InputWithIcon from "../components/general/InputWithIcon";
+import RoundedButton from "../components/general/RoundedButton";
 
 const HomeScreen = () => {
   const [inputValue, setInputValue] = useState("");

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { View, ScrollView, ActivityIndicator } from "react-native";
-import Header from "../../components/shoplist/Header";
-import SearchBar from "../../components/recipes/SearchBar";
+import React, { useEffect, useState } from "react";
+import { ActivityIndicator, ScrollView, View } from "react-native";
 import CategorySelector from "../../components/recipes/CategorySelector";
 import RecipeApiCard from "../../components/recipes/RecipeApiCard";
+import SearchBar from "../../components/recipes/SearchBar";
+import Header from "../../components/shoplist/Header";
 import styles from "../../styles/RecipePageStyles";
 // Asumiendo que spoonacularClient está correctamente importado
 import { spoonacularClient } from "../../javascript/spoonacularApi";

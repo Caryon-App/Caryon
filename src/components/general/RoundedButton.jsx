@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const RoundedButton = ({ onPress, title }) => {
   // Component code here
@@ -35,18 +35,18 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 30, // Asegura que el botón sea redondeado
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     margin: 10,
   },
   buttonPressed: {
-    backgroundColor: '#ffa8ba', // Color cuando el botón está presionado
+    backgroundColor: "#ffa8ba", // Color cuando el botón está presionado
   },
   buttonNotPressed: {
-    backgroundColor: '#faae2b', // Color por defecto del botón
+    backgroundColor: "#faae2b", // Color por defecto del botón
   },
   text: {
-    color: '#ffffff',
+    color: "#ffffff",
     fontSize: 16,
   },
 });

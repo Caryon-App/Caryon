@@ -1,12 +1,12 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
 
-import ShoppingListScreen from "./src/screens/main/ShoppingListScreen";
 import InspirationScreen from "./src/screens/main/InspirationScreen";
-import RegisterScreen from "./src/screens/main/RegisterScreen";
 import LoginScreen from "./src/screens/main/LoginScreen";
+import RegisterScreen from "./src/screens/main/RegisterScreen";
+import ShoppingListScreen from "./src/screens/main/ShoppingListScreen";
 
 const Tab = createBottomTabNavigator();
 

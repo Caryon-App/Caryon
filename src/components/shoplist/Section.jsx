@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import styles from '../../styles/ShopStyles';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import React from "react";
+import { Text, View } from "react-native";
+import styles from "../../styles/ShopStyles";
 
 const Section = ({ title, children }) => (
   <View style={styles.section}>
@@ -11,9 +11,8 @@ const Section = ({ title, children }) => (
 );
 
 Section.propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-  };
-    
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Section;

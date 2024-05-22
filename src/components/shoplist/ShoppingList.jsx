@@ -1,8 +1,9 @@
-import React from 'react';
-import { ScrollView } from 'react-native';
-import Section from './Section';
-import ShopItem from './ShopItem';
-import styles from '../../styles/ShopStyles';
+import PropTypes from "prop-types";
+import React from "react";
+import { ScrollView } from "react-native";
+import styles from "../../styles/ShopStyles";
+import Section from "./Section";
+import ShopItem from "./ShopItem";
 
 const ShoppingList = ({ items }) => (
   <ScrollView style={styles.listContainer}>
@@ -16,6 +17,18 @@ const ShoppingList = ({ items }) => (
   </ScrollView>
 );
 
-
+ShoppingList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          checked: PropTypes.bool.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
+};
 
 export default ShoppingList;

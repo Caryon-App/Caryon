@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
+import PropTypes from "prop-types";
+import React from "react";
+import { Image, Text, View } from "react-native";
 import styles from "../../styles/RecipePageStyles";
-import PropTypes from 'prop-types';
 
 const RecipeCard = ({ title, imageUrl }) => (
   <View style={styles.recipeCard}>
@@ -12,8 +12,8 @@ const RecipeCard = ({ title, imageUrl }) => (
 );
 
 RecipeCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-    };
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+};
 
 export default RecipeCard;

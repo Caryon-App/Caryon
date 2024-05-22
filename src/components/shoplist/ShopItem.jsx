@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import styles from '../../styles/ShopStyles';
-import PropTypes from 'prop-types';
+import { Ionicons } from "@expo/vector-icons";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { Text, TouchableOpacity } from "react-native";
+import styles from "../../styles/ShopStyles";
 
 const ShopItem = ({ name }) => {
   const [checked, setChecked] = useState(false);

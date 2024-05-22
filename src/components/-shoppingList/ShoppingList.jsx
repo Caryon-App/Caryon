@@ -1,11 +1,11 @@
 // ShoppingList.js
-import React, { useState, useRef } from 'react';
-import { View, StyleSheet, FlatList, TextInput } from 'react-native';
-import ListItem from './ListItem';
-import RoundedButton from '../general/RoundedButton';
+import React, { useRef, useState } from "react";
+import { FlatList, StyleSheet, TextInput, View } from "react-native";
+import RoundedButton from "../general/RoundedButton";
+import ListItem from "./ListItem";
 
 const ShoppingList = () => {
-  const [item, setItem] = useState('');
+  const [item, setItem] = useState("");
   const [items, setItems] = useState([]);
   const [showInput, setShowInput] = useState(false);
   const inputRef = useRef(null);
@@ -13,12 +13,12 @@ const ShoppingList = () => {
   const addItem = () => {
     if (!item) return;
     setItems([...items, { id: Date.now(), name: item }]);
-    setItem('');
+    setItem("");
     setShowInput(false); // Ocultar input después de añadir
   };
 
   const removeItem = (id) => {
-    setItems(items.filter(item => item.id !== id));
+    setItems(items.filter((item) => item.id !== id));
   };
 
   return (
@@ -41,7 +41,7 @@ const ShoppingList = () => {
         renderItem={({ item }) => (
           <ListItem item={item} onRemoveItem={removeItem} />
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
       />
     </View>
   );
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderRadius: 5,
     padding: 10,
     marginBottom: 10,

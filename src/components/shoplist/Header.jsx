@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import styles from '../../styles/ShopStyles';
-import PropTypes from 'prop-types';
+import { Ionicons } from "@expo/vector-icons";
+import PropTypes from "prop-types";
+import React from "react";
+import { Text, View } from "react-native";
+import styles from "../../styles/ShopStyles";
 
 const Header = ({ title }) => (
   <View style={styles.header}>
@@ -12,9 +12,7 @@ const Header = ({ title }) => (
 );
 
 Header.propTypes = {
-    title: PropTypes.string.isRequired,
-    };
-
-
+  title: PropTypes.string.isRequired,
+};
 
 export default Header;

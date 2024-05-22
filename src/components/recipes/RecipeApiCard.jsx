@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, Linking } from 'react-native';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import React from "react";
+import { Image, Linking, StyleSheet, Text, View } from "react-native";
 
 const RecipeApiCard = ({ recipe }) => {
   const {
@@ -19,11 +19,19 @@ const RecipeApiCard = ({ recipe }) => {
       <Text style={styles.title}>{title}</Text>
       <Image source={{ uri: image }} style={styles.image} />
       <Text style={styles.info}>Listo en: {readyInMinutes} minutos</Text>
-      <Text style={styles.info}>Libre de gluten: {glutenFree ? 'Sí' : 'No'}</Text>
-      <Text style={styles.info}>Libre de lácteos: {dairyFree ? 'Sí' : 'No'}</Text>
+      <Text style={styles.info}>
+        Libre de gluten: {glutenFree ? "Sí" : "No"}
+      </Text>
+      <Text style={styles.info}>
+        Libre de lácteos: {dairyFree ? "Sí" : "No"}
+      </Text>
       <Text style={styles.info}>Puntaje de salud: {healthScore}</Text>
-      <Text style={styles.summary} numberOfLines={3}>{summary.replace(/<[^>]+>/g, '')}</Text>
-      <Text style={styles.link} onPress={() => Linking.openURL(sourceUrl)}>Ver Receta Completa</Text>
+      <Text style={styles.summary} numberOfLines={3}>
+        {summary.replace(/<[^>]+>/g, "")}
+      </Text>
+      <Text style={styles.link} onPress={() => Linking.openURL(sourceUrl)}>
+        Ver Receta Completa
+      </Text>
     </View>
   );
 };
@@ -43,11 +51,11 @@ RecipeApiCard.propTypes = {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 8,
     padding: 16,
     marginBottom: 20,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
@@ -55,11 +63,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
   },
   image: {
-    width: '100%',
+    width: "100%",
     height: 200,
     borderRadius: 8,
     marginBottom: 8,
@@ -70,12 +78,12 @@ const styles = StyleSheet.create({
   },
   summary: {
     fontSize: 14,
-    color: '#666',
+    color: "#666",
     marginBottom: 8,
   },
   link: {
     fontSize: 14,
-    color: '#007bff',
+    color: "#007bff",
   },
 });
 

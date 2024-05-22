@@ -14,9 +14,10 @@
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.21",
     "@supabase/supabase-js": "^2.41.1",
-    "expo": "^50.0.0",
+    "expo": "^51.0.8",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "react-native": "0.73.6",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "^2.14.0",
@@ -30,7 +31,7 @@
     "@typescript-eslint/parser": "^7.0.2",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
-    "npm-check": "^6.0.1"
+    "npm-check": "^3.2.10"
   },
   "private": true
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, TextInput } from 'react-native';
+import PropTypes from "prop-types";
+import React from "react";
+import { TextInput, View } from "react-native";
 import styles from "../../styles/RecipePageStyles";
-import PropTypes from 'prop-types';
 
 const SearchBar = ({ placeholder }) => (
   <View style={styles.searchBar}>
@@ -11,7 +11,7 @@ const SearchBar = ({ placeholder }) => (
 );
 
 SearchBar.propTypes = {
-    placeholder: PropTypes.string.isRequired,
-    };
+  placeholder: PropTypes.string.isRequired,
+};
 
 export default SearchBar;
