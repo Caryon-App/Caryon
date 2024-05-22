@@ -1,22 +1,23 @@
-import { useNavigation } from "@react-navigation/native"; // Import the 'useNavigation' hook
+// src\components\forms\LoginForm.jsx
+import { useNavigation } from "@react-navigation/native"; // Import the useNavigation hook
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { loginUser } from "../../javascript/supabase/auth"; // Asegúrate de que este es el camino correcto para tu función de inicio de sesión
-import InputWithIcon from "../general/InputWithIcon"; // Asegúrate de que este es el camino correcto para tu componente InputWithIcon
+import { loginUser } from "../../javascript/supabase/auth";
+import InputWithIcon from "../general/InputWithIcon";
 import RoundedButton from "../general/RoundedButton";
 
-const LoginForm = () => {
+const LoginForm = ({ onSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigation = useNavigation(); // Use the 'useNavigation' hook to get the navigation object
+  const navigation = useNavigation(); // Use the useNavigation hook to access the navigation object
 
   const handleLogin = async () => {
     console.log(email, password);
     try {
       const { data } = await loginUser(email, password);
       Alert.alert("Inicio de sesión exitoso", `Usuario: ${data.user.email}`);
-      // Navegar a otra pantalla si es necesario
+      onSuccess(); // Llamar a la función onSuccess para navegar a la pantalla de ingredientes
     } catch (error) {
       Alert.alert("Error", error.error_description || error.message);
     }
@@ -50,6 +51,10 @@ const LoginForm = () => {
       <RoundedButton title="Log In" onPress={handleLogin} />
     </View>
   );
+};
+
+LoginForm.propTypes = {
+  onSuccess: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

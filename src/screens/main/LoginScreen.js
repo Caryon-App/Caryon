@@ -1,15 +1,31 @@
+// src/screens/main/LoginScreen.js
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-// En tu App.js o donde configures la navegación
 import LoginForm from "../../components/forms/LoginForm";
 import CustomText from "../../components/general/CustomText";
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
+
+  const handleRegisterNavigation = () => {
+    navigation.navigate("Register");
+  };
+
+  const handleLoginSuccess = () => {
+    navigation.navigate("Main", {
+      screen: "Ingredients",
+    });
+  };
+
   return (
     <View style={styles.container}>
       <CustomText type="h1">Log In</CustomText>
-      <LoginForm />
+      <LoginForm onSuccess={handleLoginSuccess} />
+      <TouchableOpacity onPress={handleRegisterNavigation}>
+        <Text style={styles.registerButton}>No tienes cuenta? Regístrate</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -19,9 +35,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
+    paddingHorizontal: 20,
   },
-  buttonContainer: {
-    margin: 20,
+  registerButton: {
+    color: "blue",
+    textAlign: "center",
+    marginVertical: 10,
   },
 });
 
