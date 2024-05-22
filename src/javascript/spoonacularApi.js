@@ -17,8 +17,10 @@ const fetchApi = async (endpoint, params = {}) => {
   }
 };
 
-// Modificada para solicitar 3 recetas
+// Modificada para solicitar 3 recetas aleatorias
 const getSpoonacularRandomRecipes = async (tags) => {
+  //hacemos un tags tolowercase para que no haya problemas con las mayúsculas
+  tags = tags.toLowerCase();
   const params = { number: 3, tags }; // Aquí puedes especificar los tags que quieras, por ejemplo: 'chicken'
   const data = await fetchApi("/recipes/random", params);
   console.log(data);

@@ -1,5 +1,4 @@
 // src/screens/main/IngredientsScreen.js
-import { createClient } from "@supabase/supabase-js";
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
@@ -12,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import supabase from "../../javascript/supabase/supabaseClient";
 
 const IngredientsScreen = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -21,11 +21,6 @@ const IngredientsScreen = () => {
   const [inputValue, setInputValue] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const supabaseUrl = "https://ijflbhnnkysiabzsrlvy.supabase.co";
-  const supabaseKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqZmxiaG5ua3lzaWFienNybHZ5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMTkwMTQ5NCwiZXhwIjoyMDI3NDc3NDk0fQ.q1iY5txmvy5hGnsdXvtA6TaYe-1ED57xWOmc3qDnQuQ";
-  const supabase = createClient(supabaseUrl, supabaseKey);
 
   useEffect(() => {
     const fetchIngredients = async () => {

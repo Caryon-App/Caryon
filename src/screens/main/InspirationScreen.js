@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import {
+  ActivityIndicator,
+  ScrollView,
+  View,
+  TextInput,
+  Text,
+} from "react-native";
 import CategorySelector from "../../components/recipes/CategorySelector";
 import RecipeApiCard from "../../components/recipes/RecipeApiCard";
-// import SearchBar from "../../components/recipes/SearchBar";
-import TextInput from "../../components/recipes/TextInput";
 import Header from "../../components/shoplist/Header";
 import styles from "../../styles/RecipePageStyles";
-
-// Asumiendo que spoonacularClient está correctamente importado
-import { spoonacularClient } from "../../javascript/spoonacularApi";
+import { spoonacularClient } from "../../javascript/spoonacularApi"; // Asegúrate de que la ruta es correcta
 
 const InspirationScreen = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   const placeholder = "Buscar recetas";
 
   useEffect(() => {
     const loadRecipes = async () => {
       try {
-        // Aquí podrías especificar tags como 'chicken' o lo que necesites
         const data = await spoonacularClient.getRandomRecipes("chicken");
-        setRecipes(data);
+        setRecipes(data || []); // Asegúrate de que 'data' sea correcto
       } catch (error) {
         console.error(error);
       } finally {
@@ -34,8 +36,9 @@ const InspirationScreen = () => {
   const searchRecipes = async (query) => {
     try {
       setLoading(true);
-      const data = await spoonacularClient.getRandomRecipes(query);
-      setRecipes(data);
+      const data = await spoonacularClient.getRandomRecipes(query); // Usa la función correcta para buscar por ingrediente
+      console.log(data); // Imprime la respuesta completa de la API
+      setRecipes(data || []); // Asegúrate de que 'data' sea correcto
     } catch (error) {
       console.error(error);
     } finally {
@@ -55,18 +58,23 @@ const InspirationScreen = () => {
         <TextInput
           placeholder={placeholder}
           style={styles.searchInput}
-          onSubmitEditing={() => searchRecipes(placeholder)}
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+          onSubmitEditing={() => searchRecipes(searchQuery)}
         />
       </View>
 
       <CategorySelector categories={["Postres", "Cenas", "Desayunos"]} />
       <ScrollView style={styles.recipeList}>
-        {recipes.map((recipe) => (
-          <RecipeApiCard
-            key={recipe.id}
-            recipe={recipe} // Ahora pasamos todo el objeto de receta
-          />
-        ))}
+        {recipes.length > 0 ? (
+          recipes.map((recipe) => (
+            <RecipeApiCard key={recipe.id} recipe={recipe} />
+          ))
+        ) : (
+          <View style={styles.noResults}>
+            <Text>No se encontraron recetas.</Text>
+          </View>
+        )}
       </ScrollView>
     </View>
   );
