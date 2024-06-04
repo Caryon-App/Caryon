@@ -1,21 +1,26 @@
-# Caryon
+# Caryon App
 
-Caryon es una aplicación dedicada al escaneo de recetas y a la gestión de la lista de la compra. Esta aplicación ha sido diseñada para facilitar la planificación de las comidas y la gestión de las compras necesarias para prepararlas.
+Caryon App es una aplicación de recetas y la lista de la compra, que permite a los usuarios escanear recetas, generar listas
+ de la compra y planificar sus comidas.
 
 ## Características
 
-- **Escaneo de recetas**: La aplicación permite escanear recetas de cualquier formato y las convierte en una lista de ingredientes fácil de seguir.
-- **Gestión de la lista de la compra**: Una vez escaneada la receta, la aplicación genera automáticamente una lista de la compra con los ingredientes necesarios.
-- **Planificación de comidas**: La aplicación permite planificar las comidas de la semana basándose en las recetas escaneadas.
-- **Recordatorios**: La aplicación envía recordatorios para comprar los ingredientes necesarios para las recetas planificadas.
+- **Escaneo de recetas**: La aplicación permite a los usuarios escanear recetas de cualquier formato y convertirlas en una lista de ingredientes fácil de seguir.
+- **Gestión de la lista de la compra**: Una vez escaneada la receta,
+ la aplicación genera automáticamente una lista de la compra con los ingredientes necesarios. Los usuarios pueden añadir o eliminar ingredientes de la lista, así como marcarlos como comprados.
+- **Planificación de comidas**: La aplicación permite a los usuarios planificar sus comidas de la semana basándose en las recetas disponibles. Los usuarios pueden crear un plan de comidas arrastrando y soltando recetas en un calendario.
+- **Interfaz de usuario intuitiva**: La aplicación cuenta con una interfaz de usuario intuitiva que facilita su uso. La aplicación está disponible en varios idiomas.
+- **Compatible con múltiples dispositivos**: La aplicación es compatible con múltiples dispositivos,
+ incluyendo teléfonos móviles, tabletas y ordenadores.
+- **Actualizaciones periódicas**: La aplicación se actualiza periódicamente con nuevas funciones y mejoras.
 
 ## Cómo usar
 
-1. Escanee la receta utilizando la función de escaneo de la aplicación.
-2. Revise y confirme la lista de ingredientes generada.
-3. La aplicación generará automáticamente una lista de la compra basada en las recetas escaneadas.
-4. Planifique sus comidas utilizando la función de planificación de la aplicación.
-5. Reciba recordatorios para comprar los ingredientes necesarios.
+1. Descargue e instale la aplicación en su dispositivo.
+2. Cree una cuenta o inicie sesión si ya tiene una.
+3. Cree una nueva receta utilizando la aplicación.
+4. Revise y confirme la lista de ingredientes generada.
+5. Inspiresé con nueva recetas dentro de la app.
 
 ## Contribuir
 

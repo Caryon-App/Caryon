@@ -2,10 +2,10 @@ import { Ionicons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import {
-    KeyboardAvoidingView,
-    Platform,
-    TextInput,
-    TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
+  TextInput,
+  TouchableOpacity,
 } from "react-native";
 import styles from "../../styles/ShopStyles";
 
